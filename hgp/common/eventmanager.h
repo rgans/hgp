@@ -1,8 +1,8 @@
 #ifndef RRG_EVENTMANAGER_H
 #define RRG_EVENTMANAGER_H
 
-#include "util/observer.h"
 #include <SDL2/SDL.h>
+#include "util/observer.h"
 
 typedef struct RRG_MouseMoveEventArg {
 	float x;

@@ -2,8 +2,6 @@
 #define RRG_GAME_H
 
 #include "common/eventmanager.h"
-#include "common/displaymanager.h"
-#include <SDL2/SDL.h>
 
 class RRG_Game
 {

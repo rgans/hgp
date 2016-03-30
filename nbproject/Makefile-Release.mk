@@ -39,18 +39,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/hgp/common/displaymanager.o \
 	${OBJECTDIR}/hgp/common/eventmanager.o \
 	${OBJECTDIR}/hgp/common/inputdevice.o \
-	${OBJECTDIR}/hgp/common/inputmanager.o \
 	${OBJECTDIR}/hgp/common/keyboard/linuxinput.o \
 	${OBJECTDIR}/hgp/common/keyboard/macinput.o \
 	${OBJECTDIR}/hgp/common/keyboard/windowsinput.o \
 	${OBJECTDIR}/hgp/common/mouse/linuxinput.o \
 	${OBJECTDIR}/hgp/common/mouse/macinput.o \
 	${OBJECTDIR}/hgp/common/mouse/windowsinput.o \
-	${OBJECTDIR}/hgp/common/statelistenerqueue.o \
 	${OBJECTDIR}/hgp/game.o \
+	${OBJECTDIR}/hgp/gamecontroller.o \
 	${OBJECTDIR}/hgp/interface/control.o \
-	${OBJECTDIR}/hgp/interface/view.o \
-	${OBJECTDIR}/hgp/interface/widget.o
+	${OBJECTDIR}/hgp/interface/view.o
 
 
 # C Compiler Flags
@@ -97,11 +95,6 @@ ${OBJECTDIR}/hgp/common/inputdevice.o: hgp/common/inputdevice.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/inputdevice.o hgp/common/inputdevice.cpp
 
-${OBJECTDIR}/hgp/common/inputmanager.o: hgp/common/inputmanager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/hgp/common
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/inputmanager.o hgp/common/inputmanager.cpp
-
 ${OBJECTDIR}/hgp/common/keyboard/linuxinput.o: hgp/common/keyboard/linuxinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/keyboard
 	${RM} "$@.d"
@@ -132,15 +125,15 @@ ${OBJECTDIR}/hgp/common/mouse/windowsinput.o: hgp/common/mouse/windowsinput.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/windowsinput.o hgp/common/mouse/windowsinput.cpp
 
-${OBJECTDIR}/hgp/common/statelistenerqueue.o: hgp/common/statelistenerqueue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/hgp/common
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/statelistenerqueue.o hgp/common/statelistenerqueue.cpp
-
 ${OBJECTDIR}/hgp/game.o: hgp/game.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/game.o hgp/game.cpp
+
+${OBJECTDIR}/hgp/gamecontroller.o: hgp/gamecontroller.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/gamecontroller.o hgp/gamecontroller.cpp
 
 ${OBJECTDIR}/hgp/interface/control.o: hgp/interface/control.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
@@ -151,11 +144,6 @@ ${OBJECTDIR}/hgp/interface/view.o: hgp/interface/view.cpp
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/view.o hgp/interface/view.cpp
-
-${OBJECTDIR}/hgp/interface/widget.o: hgp/interface/widget.cpp 
-	${MKDIR} -p ${OBJECTDIR}/hgp/interface
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/widget.o hgp/interface/widget.cpp
 
 # Subprojects
 .build-subprojects:

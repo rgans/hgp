@@ -54,22 +54,23 @@ public:
 
 	void DrawImage();
 	void DrawText();
-	void DrawLine(const RRG_Frame* frame, Uint32 color);
-	void Draw(const RRG_Frame* frame, Uint32 color);
+	void DrawLine(const RRG_Frame& frame, Uint32 color);
+	void Draw(const RRG_Frame& frame, Uint32 color);
 	void Clear(Uint32 color);
 	void ClearAll(Uint32 color);
-	bool SetMousePosition(const RRG_Point* position);
+	bool SetMousePosition(const RRG_Point& position);
 	//bool SetMouseCursor(csMouseCursorID iShape);
 	//bool SetMouseCursor(iImage *image, const csRGBcolor* keycolor = 0, int hotspot_x = 0, int hotspot_y = 0, csRGBcolor fg = csRGBcolor(255, 255, 255), csRGBcolor bg = csRGBcolor(0, 0, 0));
 
-	bool BeginDraw();
-	void FinishDraw();
 	void Render();
 
 private:
 	RRG_DisplayManager();
 	~RRG_DisplayManager();
 
+	bool BeginDraw();
+	void FinishDraw();
+        
 	SDL_Window* _window;
 	SDL_Surface* _screenSurface;
 	bool _initialized;

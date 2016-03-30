@@ -23,15 +23,13 @@
         <itemPath>hgp/common/eventmanager.h</itemPath>
         <itemPath>hgp/common/input.h</itemPath>
         <itemPath>hgp/common/inputdevice.h</itemPath>
-        <itemPath>hgp/common/inputmanager.h</itemPath>
-        <itemPath>hgp/common/statelistenerqueue.h</itemPath>
       </logicalFolder>
       <logicalFolder name="interface" displayName="interface" projectFiles="true">
         <itemPath>hgp/interface/control.h</itemPath>
         <itemPath>hgp/interface/view.h</itemPath>
-        <itemPath>hgp/interface/widget.h</itemPath>
       </logicalFolder>
       <itemPath>hgp/game.h</itemPath>
+      <itemPath>hgp/gamecontroller.h</itemPath>
       <itemPath>hgp/global.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -58,15 +56,13 @@
         <itemPath>hgp/common/displaymanager.cpp</itemPath>
         <itemPath>hgp/common/eventmanager.cpp</itemPath>
         <itemPath>hgp/common/inputdevice.cpp</itemPath>
-        <itemPath>hgp/common/inputmanager.cpp</itemPath>
-        <itemPath>hgp/common/statelistenerqueue.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="interface" displayName="interface" projectFiles="true">
         <itemPath>hgp/interface/control.cpp</itemPath>
         <itemPath>hgp/interface/view.cpp</itemPath>
-        <itemPath>hgp/interface/widget.cpp</itemPath>
       </logicalFolder>
       <itemPath>hgp/game.cpp</itemPath>
+      <itemPath>hgp/gamecontroller.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -123,10 +119,6 @@
       </item>
       <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/common/inputmanager.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/common/inputmanager.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/common/keyboard/linuxinput.h" ex="false" tool="3" flavor2="0">
@@ -154,10 +146,6 @@
       </item>
       <item path="hgp/common/mouse/windowsinput.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/common/statelistenerqueue.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/common/statelistenerqueue.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hgp/common/util/observer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/util/singleton.h" ex="false" tool="3" flavor2="0">
@@ -165,6 +153,10 @@
       <item path="hgp/game.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/gamecontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/gamecontroller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -175,10 +167,6 @@
       <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="hgp/interface/widget.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/interface/widget.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -217,10 +205,6 @@
       </item>
       <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/common/inputmanager.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/common/inputmanager.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/common/keyboard/linuxinput.h" ex="false" tool="3" flavor2="0">
@@ -248,10 +232,6 @@
       </item>
       <item path="hgp/common/mouse/windowsinput.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/common/statelistenerqueue.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/common/statelistenerqueue.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hgp/common/util/observer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/util/singleton.h" ex="false" tool="3" flavor2="0">
@@ -259,6 +239,10 @@
       <item path="hgp/game.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/gamecontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/gamecontroller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -269,10 +253,6 @@
       <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="hgp/interface/widget.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="hgp/interface/widget.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -1,10 +1,7 @@
 #ifndef RRG_OBSERVER_H
 #define RRG_OBSERVER_H
 
-#pragma warning (push)
-#pragma warning( disable : 4996 )
 #include <boost/signals2.hpp>
-#pragma warning (pop)
 
 // Convenience wrapper for boost::signals2::signal.
 template<typename Signature> class RRG_Observer {
