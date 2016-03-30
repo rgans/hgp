@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="common" displayName="common" projectFiles="true">
+        <logicalFolder name="keyboard" displayName="keyboard" projectFiles="true">
+          <itemPath>hgp/common/keyboard/linuxinput.h</itemPath>
+          <itemPath>hgp/common/keyboard/macinput.h</itemPath>
+          <itemPath>hgp/common/keyboard/windowsinput.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="mouse" displayName="mouse" projectFiles="true">
+          <itemPath>hgp/common/mouse/linuxinput.h</itemPath>
+          <itemPath>hgp/common/mouse/macinput.h</itemPath>
+          <itemPath>hgp/common/mouse/windowsinput.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="util" displayName="util" projectFiles="true">
+          <itemPath>hgp/common/util/observer.h</itemPath>
+          <itemPath>hgp/common/util/singleton.h</itemPath>
+        </logicalFolder>
+        <itemPath>hgp/common/displaymanager.h</itemPath>
+        <itemPath>hgp/common/eventmanager.h</itemPath>
+        <itemPath>hgp/common/input.h</itemPath>
+        <itemPath>hgp/common/inputdevice.h</itemPath>
+        <itemPath>hgp/common/inputmanager.h</itemPath>
+        <itemPath>hgp/common/statelistenerqueue.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="interface" displayName="interface" projectFiles="true">
+        <itemPath>hgp/interface/control.h</itemPath>
+        <itemPath>hgp/interface/view.h</itemPath>
+        <itemPath>hgp/interface/widget.h</itemPath>
+      </logicalFolder>
+      <itemPath>hgp/game.h</itemPath>
+      <itemPath>hgp/global.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="common" displayName="common" projectFiles="true">
+        <logicalFolder name="keyboard" displayName="keyboard" projectFiles="true">
+          <itemPath>hgp/common/keyboard/linuxinput.cpp</itemPath>
+          <itemPath>hgp/common/keyboard/macinput.cpp</itemPath>
+          <itemPath>hgp/common/keyboard/windowsinput.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="mouse" displayName="mouse" projectFiles="true">
+          <itemPath>hgp/common/mouse/linuxinput.cpp</itemPath>
+          <itemPath>hgp/common/mouse/macinput.cpp</itemPath>
+          <itemPath>hgp/common/mouse/windowsinput.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="util" displayName="util" projectFiles="true">
+        </logicalFolder>
+        <itemPath>hgp/common/Input.cpp</itemPath>
+        <itemPath>hgp/common/displaymanager.cpp</itemPath>
+        <itemPath>hgp/common/eventmanager.cpp</itemPath>
+        <itemPath>hgp/common/inputdevice.cpp</itemPath>
+        <itemPath>hgp/common/inputmanager.cpp</itemPath>
+        <itemPath>hgp/common/statelistenerqueue.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="interface" displayName="interface" projectFiles="true">
+        <itemPath>hgp/interface/control.cpp</itemPath>
+        <itemPath>hgp/interface/view.cpp</itemPath>
+        <itemPath>hgp/interface/widget.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>hgp/game.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>hgp</Elem>
+  </sourceRootList>
+  <projectmakefile>CMakefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>/Library/Frameworks/SDL2.framework/Headers</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/Library/Frameworks</pElem>
+            <pElem>libs</pElem>
+          </linkerAddLib>
+          <commandLine>-framework SDL2</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="hgp/common/Input.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/displaymanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/displaymanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/eventmanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/eventmanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/inputdevice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/inputmanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/inputmanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/linuxinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/macinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/macinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/windowsinput.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/windowsinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/linuxinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/linuxinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/macinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/macinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/windowsinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/windowsinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/statelistenerqueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/statelistenerqueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/util/observer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/util/singleton.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/game.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/control.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/control.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/widget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/widget.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="hgp/common/Input.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/displaymanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/displaymanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/eventmanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/eventmanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/inputdevice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/inputmanager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/inputmanager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/linuxinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/macinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/macinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/windowsinput.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="hgp/common/keyboard/windowsinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/linuxinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/linuxinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/macinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/macinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/windowsinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/mouse/windowsinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/statelistenerqueue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/statelistenerqueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/util/observer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/util/singleton.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/game.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/control.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/control.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/widget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/widget.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
