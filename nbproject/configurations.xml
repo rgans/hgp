@@ -21,16 +21,21 @@
         </logicalFolder>
         <itemPath>hgp/common/displaymanager.h</itemPath>
         <itemPath>hgp/common/eventmanager.h</itemPath>
+        <itemPath>hgp/common/framerate.h</itemPath>
         <itemPath>hgp/common/input.h</itemPath>
         <itemPath>hgp/common/inputdevice.h</itemPath>
+        <itemPath>hgp/common/interval.h</itemPath>
       </logicalFolder>
       <logicalFolder name="interface" displayName="interface" projectFiles="true">
+        <itemPath>hgp/interface/button.h</itemPath>
         <itemPath>hgp/interface/control.h</itemPath>
         <itemPath>hgp/interface/view.h</itemPath>
       </logicalFolder>
       <itemPath>hgp/game.h</itemPath>
-      <itemPath>hgp/gamecontroller.h</itemPath>
+      <itemPath>hgp/gamemanager.h</itemPath>
       <itemPath>hgp/global.h</itemPath>
+      <itemPath>hgp/logincontroller.h</itemPath>
+      <itemPath>hgp/viewcontroller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -55,14 +60,19 @@
         <itemPath>hgp/common/Input.cpp</itemPath>
         <itemPath>hgp/common/displaymanager.cpp</itemPath>
         <itemPath>hgp/common/eventmanager.cpp</itemPath>
+        <itemPath>hgp/common/framerate.cpp</itemPath>
         <itemPath>hgp/common/inputdevice.cpp</itemPath>
+        <itemPath>hgp/common/interval.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="interface" displayName="interface" projectFiles="true">
+        <itemPath>hgp/interface/button.cpp</itemPath>
         <itemPath>hgp/interface/control.cpp</itemPath>
         <itemPath>hgp/interface/view.cpp</itemPath>
       </logicalFolder>
       <itemPath>hgp/game.cpp</itemPath>
-      <itemPath>hgp/gamecontroller.cpp</itemPath>
+      <itemPath>hgp/gamemanager.cpp</itemPath>
+      <itemPath>hgp/logincontroller.cpp</itemPath>
+      <itemPath>hgp/viewcontroller.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -83,7 +93,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -93,6 +103,7 @@
           <incDir>
             <pElem>include</pElem>
             <pElem>/Library/Frameworks/SDL2.framework/Headers</pElem>
+            <pElem>/Library/Frameworks/SDL2_ttf.framework/Headers</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -100,7 +111,7 @@
             <pElem>/Library/Frameworks</pElem>
             <pElem>libs</pElem>
           </linkerAddLib>
-          <commandLine>-framework SDL2</commandLine>
+          <commandLine>-framework SDL2 -framework SDL2_ttf</commandLine>
         </linkerTool>
       </compileType>
       <item path="hgp/common/Input.cpp" ex="false" tool="1" flavor2="0">
@@ -113,11 +124,19 @@
       </item>
       <item path="hgp/common/eventmanager.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="hgp/common/framerate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/framerate.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="hgp/common/input.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/inputdevice.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/interval.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/interval.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -154,11 +173,15 @@
       </item>
       <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/gamecontroller.cpp" ex="false" tool="1" flavor2="0">
+      <item path="hgp/gamemanager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="hgp/gamecontroller.h" ex="false" tool="3" flavor2="0">
+      <item path="hgp/gamemanager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/button.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/interface/control.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -167,6 +190,14 @@
       <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/logincontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/logincontroller.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/viewcontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/viewcontroller.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -199,11 +230,19 @@
       </item>
       <item path="hgp/common/eventmanager.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="hgp/common/framerate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/framerate.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="hgp/common/input.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/inputdevice.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/common/inputdevice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/common/interval.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/common/interval.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/common/keyboard/linuxinput.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -240,11 +279,15 @@
       </item>
       <item path="hgp/game.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hgp/gamecontroller.cpp" ex="false" tool="1" flavor2="0">
+      <item path="hgp/gamemanager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="hgp/gamecontroller.h" ex="false" tool="3" flavor2="0">
+      <item path="hgp/gamemanager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/interface/button.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/interface/button.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hgp/interface/control.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -253,6 +296,14 @@
       <item path="hgp/interface/view.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="hgp/interface/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/logincontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/logincontroller.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hgp/viewcontroller.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="hgp/viewcontroller.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

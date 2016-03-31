@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/hgp/common/Input.o \
 	${OBJECTDIR}/hgp/common/displaymanager.o \
 	${OBJECTDIR}/hgp/common/eventmanager.o \
+	${OBJECTDIR}/hgp/common/framerate.o \
 	${OBJECTDIR}/hgp/common/inputdevice.o \
+	${OBJECTDIR}/hgp/common/interval.o \
 	${OBJECTDIR}/hgp/common/keyboard/linuxinput.o \
 	${OBJECTDIR}/hgp/common/keyboard/macinput.o \
 	${OBJECTDIR}/hgp/common/keyboard/windowsinput.o \
@@ -46,9 +48,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/hgp/common/mouse/macinput.o \
 	${OBJECTDIR}/hgp/common/mouse/windowsinput.o \
 	${OBJECTDIR}/hgp/game.o \
-	${OBJECTDIR}/hgp/gamecontroller.o \
+	${OBJECTDIR}/hgp/gamemanager.o \
+	${OBJECTDIR}/hgp/interface/button.o \
 	${OBJECTDIR}/hgp/interface/control.o \
-	${OBJECTDIR}/hgp/interface/view.o
+	${OBJECTDIR}/hgp/interface/view.o \
+	${OBJECTDIR}/hgp/logincontroller.o \
+	${OBJECTDIR}/hgp/viewcontroller.o
 
 
 # C Compiler Flags
@@ -90,10 +95,20 @@ ${OBJECTDIR}/hgp/common/eventmanager.o: hgp/common/eventmanager.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/eventmanager.o hgp/common/eventmanager.cpp
 
+${OBJECTDIR}/hgp/common/framerate.o: hgp/common/framerate.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp/common
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/framerate.o hgp/common/framerate.cpp
+
 ${OBJECTDIR}/hgp/common/inputdevice.o: hgp/common/inputdevice.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/inputdevice.o hgp/common/inputdevice.cpp
+
+${OBJECTDIR}/hgp/common/interval.o: hgp/common/interval.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp/common
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/interval.o hgp/common/interval.cpp
 
 ${OBJECTDIR}/hgp/common/keyboard/linuxinput.o: hgp/common/keyboard/linuxinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/keyboard
@@ -130,10 +145,15 @@ ${OBJECTDIR}/hgp/game.o: hgp/game.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/game.o hgp/game.cpp
 
-${OBJECTDIR}/hgp/gamecontroller.o: hgp/gamecontroller.cpp 
+${OBJECTDIR}/hgp/gamemanager.o: hgp/gamemanager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/gamecontroller.o hgp/gamecontroller.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/gamemanager.o hgp/gamemanager.cpp
+
+${OBJECTDIR}/hgp/interface/button.o: hgp/interface/button.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp/interface
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/button.o hgp/interface/button.cpp
 
 ${OBJECTDIR}/hgp/interface/control.o: hgp/interface/control.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
@@ -144,6 +164,16 @@ ${OBJECTDIR}/hgp/interface/view.o: hgp/interface/view.cpp
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/view.o hgp/interface/view.cpp
+
+${OBJECTDIR}/hgp/logincontroller.o: hgp/logincontroller.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/logincontroller.o hgp/logincontroller.cpp
+
+${OBJECTDIR}/hgp/viewcontroller.o: hgp/viewcontroller.cpp 
+	${MKDIR} -p ${OBJECTDIR}/hgp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/viewcontroller.o hgp/viewcontroller.cpp
 
 # Subprojects
 .build-subprojects:

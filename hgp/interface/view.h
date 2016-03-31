@@ -25,6 +25,17 @@ public:
         _frame.size.height = frame.size.height;
     };
     
+    inline const RRG_Color& GetBackgroundColor() {
+        return _background_color;
+    };
+
+    inline void SetBackgroundColor(const RRG_Color& color) {
+        _background_color.r = color.r;
+        _background_color.g = color.g;
+        _background_color.b = color.b;
+        _background_color.a = color.a;
+    };
+    
     inline bool IsVisible() {
         return _visible && (!_parent || _parent->IsVisible());
     }
@@ -61,7 +72,8 @@ private:
     std::vector<RRG_View*> _child;
     bool _need_layout = false;
     bool _visible = true;
-    RRG_Frame _frame = RRG_Frame(0.0, 0.0, 10.0, 10.0);
+    RRG_Color _background_color = RRG_Color(0, 0, 0);
+    RRG_Frame _frame = RRG_Frame(0.0, 0.0, 100.0, 100.0);
     RRG_DisplayManager& _displayManager = RRG_DisplayManager::Instance();
 
 protected:
@@ -71,6 +83,8 @@ protected:
     virtual void Hide();
     virtual void Resize();
     virtual void Draw();
+    
+    bool IsInside(const RRG_Point* point);
 };
 
 #endif
