@@ -9,6 +9,7 @@ RRG_DisplayManager::~RRG_DisplayManager() {
     //Destroy window
     SDL_DestroyWindow(_window);
 
+    TTF_Quit();
     //Quit SDL subsystems
     SDL_Quit();
 }
@@ -23,6 +24,7 @@ bool RRG_DisplayManager::Initialize() {
             if (_window == NULL) {
                 printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
             } else {
+                TTF_Init();
                 renderer = SDL_CreateRenderer(_window, -1, 0);
                 //Get window surface
                 _screenSurface = SDL_GetWindowSurface(_window);
@@ -44,7 +46,7 @@ void RRG_DisplayManager::DrawImage() {
 }
 
 void RRG_DisplayManager::DrawText(std::string text) {
-    TTF_Font* Sans = TTF_OpenFont("Sans.ttf", 24);
+    TTF_Font* Sans = TTF_OpenFont("Aaargh.ttf", 24);
     SDL_Color textColor = { 255, 255, 255, 0 };
     SDL_Surface* textSurface = TTF_RenderText_Solid(Sans, text.c_str(), textColor);
 
@@ -83,12 +85,13 @@ bool RRG_DisplayManager::SetMousePosition(const RRG_Point& position) {
 //bool SetMouseCursor(iImage *image, const csRGBcolor* keycolor = 0, int hotspot_x = 0, int hotspot_y = 0, csRGBcolor fg = csRGBcolor(255, 255, 255), csRGBcolor bg = csRGBcolor(0, 0, 0));
 
 bool RRG_DisplayManager::BeginDraw() {
-    SDL_FillRect(_screenSurface, NULL, SDL_MapRGB(_screenSurface->format, 0xFF, 0xFF, 0xFF));
+    //SDL_FillRect(_screenSurface, NULL, SDL_MapRGB(_screenSurface->format, 0xFF, 0xFF, 0xFF));
     return true;
 }
 
 void RRG_DisplayManager::FinishDraw() {
-    SDL_UpdateWindowSurface(_window);
+    SDL_RenderPresent(renderer);
+    //SDL_UpdateWindowSurface(_window);
 }
 
 void RRG_DisplayManager::Render() {
