@@ -9,7 +9,7 @@ public:
     RRG_LoginController();
     virtual ~RRG_LoginController();
 private:
-    RRG_Button* login_button;
+    RRG_Button login_button;
     void LoginButton_MouseOver();
     void LoginButton_MouseOut();
 

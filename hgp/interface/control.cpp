@@ -11,7 +11,7 @@ RRG_Control::~RRG_Control() {
 
 void RRG_Control::OnMouseMove(RRG_MouseMoveEventArg arg)
 {
-    RRG_Point _point = RRG_Point(arg.x, arg.y);
+    RRG_Point _point = { arg.x, arg.y };
     if(IsInside(&_point))
     {
         Notify<RRG_ControlObserver::MouseOverEvent>();

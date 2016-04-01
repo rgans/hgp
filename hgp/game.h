@@ -21,7 +21,7 @@ private:
 	void OnMouseMove(RRG_MouseMoveEventArg arg);
 	bool OnClose(bool force_close = false);
 
-	bool _quit;
+	bool _quit = false;
 };
 
 #endif

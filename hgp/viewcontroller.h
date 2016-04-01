@@ -11,10 +11,10 @@ public:
 
 protected:
 
-    RRG_View* GetView() { return _view; };
+    RRG_View* GetView() { return &_view; };
 
 private:
-    RRG_View* _view;
+    RRG_View _view;
 
 };
 

@@ -3,15 +3,11 @@
 
 RRG_GameManager::RRG_GameManager()
 {
-	_initialized = false;
-        
-        _currentController = new RRG_LoginController();
 }
 
 
 RRG_GameManager::~RRG_GameManager()
 {
-    delete _currentController;
 }
 
 bool RRG_GameManager::Initialize()
@@ -25,5 +21,6 @@ bool RRG_GameManager::Initialize()
 
 void RRG_GameManager::Update()
 {
-    _currentController->Render();
+    RRG_LoginController _currentController;
+    _currentController.Render();
 }

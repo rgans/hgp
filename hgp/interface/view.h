@@ -72,8 +72,8 @@ private:
     std::vector<RRG_View*> _child;
     bool _need_layout = false;
     bool _visible = true;
-    RRG_Color _background_color = RRG_Color(0, 0, 0);
-    RRG_Frame _frame = RRG_Frame(0.0, 0.0, 100.0, 100.0);
+    RRG_Color _background_color = { 0, 0, 0, 0 };
+    RRG_Frame _frame = { 0.f, 0.f, 100.f, 100.f };
     RRG_DisplayManager& _displayManager = RRG_DisplayManager::Instance();
 
 protected:

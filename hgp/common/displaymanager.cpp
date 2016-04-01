@@ -1,3 +1,5 @@
+#include <SDL2/SDL.h>
+
 #include "displaymanager.h"
 
 RRG_DisplayManager::RRG_DisplayManager() {
@@ -5,7 +7,10 @@ RRG_DisplayManager::RRG_DisplayManager() {
 }
 
 RRG_DisplayManager::~RRG_DisplayManager() {
+    SDL_FreeSurface(_screenSurface);
+    
     SDL_DestroyRenderer(renderer);
+    
     //Destroy window
     SDL_DestroyWindow(_window);
 
@@ -29,10 +34,12 @@ bool RRG_DisplayManager::Initialize() {
                 //Get window surface
                 _screenSurface = SDL_GetWindowSurface(_window);
 
+                Clear(_clear_color);
+                
                 //Fill the surface white
                 //SDL_FillRect(_screenSurface, NULL, SDL_MapRGB(_screenSurface->format, 0xFF, 0xFF, 0xFF));
 
-                SDL_UpdateWindowSurface(_window);
+                //SDL_UpdateWindowSurface(_window);
 
                 _initialized = true;
             }
@@ -47,15 +54,18 @@ void RRG_DisplayManager::DrawImage() {
 
 void RRG_DisplayManager::DrawText(std::string text) {
     TTF_Font* Sans = TTF_OpenFont("Aaargh.ttf", 24);
-    SDL_Color textColor = { 255, 255, 255, 0 };
+    SDL_Color textColor = { 0, 0, 0, 0 };
     SDL_Surface* textSurface = TTF_RenderText_Solid(Sans, text.c_str(), textColor);
 
     SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
     int text_width = textSurface->w;
     int text_height = textSurface->h;
+
     SDL_FreeSurface(textSurface);
-    SDL_Rect renderQuad = { 20, SCREEN_HEIGHT - 30, SCREEN_WIDTH, text_height };
+
+    SDL_Rect renderQuad = { 20, 20, text_width, text_height };
     SDL_RenderCopy(renderer, textTexture, NULL, &renderQuad);
+
     SDL_DestroyTexture(textTexture);
 }
 
@@ -63,16 +73,14 @@ void RRG_DisplayManager::DrawLine(const RRG_Frame& frame, const RRG_Color& color
 }
 
 void RRG_DisplayManager::Draw(const RRG_Frame& frame, const RRG_Color& color) {
-    SDL_Rect rect;
-    rect.x = frame.position.x;
-    rect.y = frame.position.y;
-    rect.w = frame.size.width;
-    rect.h = frame.size.height;
+    SDL_Rect rect = { int(frame.position.x), int(frame.position.y), int(frame.size.width), int(frame.size.height) };
 
     SDL_FillRect(_screenSurface, &rect, createRGBA(color));
 }
 
 void RRG_DisplayManager::Clear(const RRG_Color& color) {
+    SDL_SetRenderDrawColor(renderer,color.r,color.g,color.b,color.a);
+    SDL_RenderClear(renderer);
 }
 
 void RRG_DisplayManager::ClearAll(const RRG_Color& color) {
@@ -86,6 +94,7 @@ bool RRG_DisplayManager::SetMousePosition(const RRG_Point& position) {
 
 bool RRG_DisplayManager::BeginDraw() {
     //SDL_FillRect(_screenSurface, NULL, SDL_MapRGB(_screenSurface->format, 0xFF, 0xFF, 0xFF));
+    Clear(_clear_color);
     return true;
 }
 

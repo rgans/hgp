@@ -30,8 +30,7 @@ private:
 	RRG_GameManager();
 	~RRG_GameManager();
 
-	bool _initialized;
-        RRG_LoginController* _currentController;
+	bool _initialized = false;
 };
 
 #endif

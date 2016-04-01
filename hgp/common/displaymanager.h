@@ -14,33 +14,24 @@ typedef struct RRG_Color
 	unsigned g;
         unsigned b;
         unsigned a;
-	RRG_Color(){};
-	RRG_Color(unsigned r_, unsigned g_, unsigned b_) : r(r_), g(g_), b(b_){};
-        RRG_Color(unsigned r_, unsigned g_, unsigned b_, unsigned a_) : r(r_), g(g_), b(b_), a(a_){};
 } RRG_Color;
 
 typedef struct RRG_Size
 {
 	float width;
 	float height;
-	RRG_Size(){};
-	RRG_Size(float width_, float height_) : width(width_), height(height_){};
 } RRG_Size;
 
 typedef struct RRG_Point
 {
 	float x;
 	float y;
-	RRG_Point(){};
-	RRG_Point(float x_, float y_) : x(x_), y(y_){};
 } RRG_Point;
 
 typedef struct RRG_Frame
 {
 	RRG_Size size;
 	RRG_Point position;
-	RRG_Frame(){};
-	RRG_Frame(float x_, float y_, float w_, float h_) : position(RRG_Point(x_, y_)), size(RRG_Size(w_, h_)){};
 } RRG_Frame;
 
 struct RRG_DisplayObserver {
@@ -96,6 +87,7 @@ private:
 	SDL_Surface* _screenSurface;
         SDL_Renderer* renderer;
 	bool _initialized;
+        RRG_Color _clear_color = { 255, 255, 255, 255 };
 };
 
 #endif

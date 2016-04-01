@@ -8,7 +8,7 @@ public:
     RRG_Interval();
     virtual ~RRG_Interval();
 
-    inline unsigned int value() const 
+    inline unsigned long long value() const 
     {
         return GetTickCount()-initial_;
     }
@@ -20,22 +20,8 @@ public:
     }
     
 private:
-    unsigned int initial_;
+    unsigned long long initial_;
 
-};
-
-struct TickCountClock
-{
-    typedef unsigned long long                       rep;
-    typedef std::milli                               period;
-    typedef std::chrono::duration<rep, period>       duration;
-    typedef std::chrono::time_point<TickCountClock>  time_point;
-    static const bool is_steady =                    true;
-
-    static time_point now() noexcept
-    {
-        return time_point(duration(RRG_Interval::GetTickCount()));
-    }
 };
 
 #endif

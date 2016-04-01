@@ -7,7 +7,6 @@
 //#define TIME_PER_FRAME = 1.f/60.f;
 
 RRG_Game::RRG_Game() {
-    _quit = false;
 }
 
 RRG_Game::~RRG_Game() {
@@ -25,26 +24,34 @@ bool RRG_Game::Run(int argc, char* args[]) {
     _eventManager.Register<RRG_EventObserver::MouseMoveEvent>([this](RRG_MouseMoveEventArg arg) { OnMouseMove(arg); });
 
     RRG_FrameRate fps;
-    unsigned int timeSinceLastUpdate = fps.Get();
-    unsigned int TimePerFrame = 1.f/60.f;
+    RRG_Interval interval;
+    RRG_Interval tempo;
+    int sec = 0;
+    int re = 0;
+    unsigned long long rate = (1.f/60.f)*1000;
     while (!_quit) {
-        
-//        sf::Time elapsedTime = clock.restart();
-//        timeSinceLastUpdate += elapsedTime;
-        timeSinceLastUpdate = fps.Get();
-        
-        while (timeSinceLastUpdate > TimePerFrame){
-            _eventManager.DispatchEvent();
+        _eventManager.DispatchEvent();
+
+        if(interval.value() > rate)
+        {
             if(_displayManager.BeginDraw())
                 _gameManager.Update();
-            
-            _displayManager.DrawText(std::to_string(timeSinceLastUpdate));
+            _displayManager.DrawText(std::to_string(fps.Get()));
+            _displayManager.FinishDraw();
+            interval = RRG_Interval();
+            re++;
+            fps.Update();
         }
 
-//        updateStatistics(elapsedTime);        
-        _displayManager.FinishDraw();
-        
-        fps.Update();
+        //std::cout<<"Fps: "<<fps.Get()<<'\n';
+        if(tempo.value() > 1000){
+            sec++;
+            std::cout<<"Secs: "<<sec<<'\n';
+            std::cout<<"Renders: "<<re<<'\n';
+            std::cout<<"Fps: "<<fps.Get()<<'\n';
+            tempo = RRG_Interval();
+            re = 0;
+        }
     }
 
     return 0;
@@ -65,11 +72,9 @@ bool RRG_Game::OnClose(bool force_close) {
 
 
 int main(int argc, char* args[]) {
-    RRG_Game* game = new RRG_Game();
+    RRG_Game game;
 
-    int result = game->Run(argc, args);
-
-    delete game;
+    int result = game.Run(argc, args);
 
     return result;
 }
