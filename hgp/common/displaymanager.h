@@ -1,93 +1,91 @@
 #ifndef RRG_DISPLAYMANAGER_H
 #define RRG_DISPLAYMANAGER_H
 
-#include <SDL2/SDL.h>
-#include <SDL2_ttf/SDL_ttf.h>
 #include "util/observer.h"
+#include <Ogre/Ogre.h>
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-typedef struct RRG_Color
-{
-	unsigned r;
-	unsigned g;
+namespace RRG {
+
+    typedef struct Color {
+        unsigned r;
+        unsigned g;
         unsigned b;
         unsigned a;
-} RRG_Color;
+    } Color;
 
-typedef struct RRG_Size
-{
-	float width;
-	float height;
-} RRG_Size;
+    typedef struct Size {
+        float width;
+        float height;
+    } Size;
 
-typedef struct RRG_Point
-{
-	float x;
-	float y;
-} RRG_Point;
+    typedef struct Point {
+        float x;
+        float y;
+    } Point;
 
-typedef struct RRG_Frame
-{
-	RRG_Size size;
-	RRG_Point position;
-} RRG_Frame;
+    typedef struct Frame {
+        Size size;
+        Point position;
+    } Frame;
 
-struct RRG_DisplayObserver {
-	enum { MouseMoveEvent, MouseClickEvent, KeyDownEvent, KeyUpEvent, KeyPressEvent };
-	using ObserverTable = std::tuple<
-		RRG_Observer<void()> //MouseMoveEvent
-	>;
-};
+    struct DisplayObserver {
 
-class RRG_DisplayManager : public RRG_Observable<RRG_DisplayObserver>
-{
-public:
-	static RRG_DisplayManager& Instance()
-	{
-		static RRG_DisplayManager _instance;
-		return _instance;
-	}
+        enum {
+            MouseMoveEvent, MouseClickEvent, KeyDownEvent, KeyUpEvent, KeyPressEvent
+        };
+        using ObserverTable = std::tuple<
+                Observer<void()> //MouseMoveEvent
+        >;
+    };
 
-	RRG_DisplayManager(RRG_DisplayManager const&) = delete;
-	void operator=(RRG_DisplayManager const&) = delete;
+    class DisplayManager : public Observable<DisplayObserver> {
+    public:
 
-	bool Initialize();
+        static DisplayManager& Instance() {
+            static DisplayManager _instance;
+            return _instance;
+        }
 
-	void DrawImage();
-	void DrawText(std::string text);
-	void DrawLine(const RRG_Frame& frame, const RRG_Color& color);
-	void Draw(const RRG_Frame& frame, const RRG_Color& color);
-	void Clear(const RRG_Color& color);
-	void ClearAll(const RRG_Color& color);
-	bool SetMousePosition(const RRG_Point& position);
-	//bool SetMouseCursor(csMouseCursorID iShape);
-	//bool SetMouseCursor(iImage *image, const csRGBcolor* keycolor = 0, int hotspot_x = 0, int hotspot_y = 0, csRGBcolor fg = csRGBcolor(255, 255, 255), csRGBcolor bg = csRGBcolor(0, 0, 0));
+        DisplayManager(DisplayManager const&) = delete;
+        void operator=(DisplayManager const&) = delete;
 
-	void Render();
-	bool BeginDraw();
-	void FinishDraw();
+        bool Initialize();
 
-private:
-	RRG_DisplayManager();
-	~RRG_DisplayManager();
-        
-        inline unsigned long createRGBA1(int r, int g, int b, int a)
-        {   
+        void DrawImage();
+        void DrawText();
+        void DrawLine(const Frame& frame, const Color& color);
+        void Draw(const Frame& frame, const Color& color);
+        void Clear(const Color& color);
+        void ClearAll(const Color& color);
+        bool SetMousePosition(const Point& position);
+        //bool SetMouseCursor(csMouseCursorID iShape);
+        //bool SetMouseCursor(iImage *image, const csRGBcolor* keycolor = 0, int hotspot_x = 0, int hotspot_y = 0, csRGBcolor fg = csRGBcolor(255, 255, 255), csRGBcolor bg = csRGBcolor(0, 0, 0));
+
+        void Render();
+        bool BeginDraw();
+        void FinishDraw();
+
+    private:
+        DisplayManager();
+        ~DisplayManager();
+
+        inline unsigned long createRGBA1(int r, int g, int b, int a) {
             return ((r & 0xff) << 24) + ((g & 0xff) << 16) + ((b & 0xff) << 8) + (a & 0xff);
         }
-        
-        inline unsigned long createRGBA(const RRG_Color& color)
-        {   
+
+        inline unsigned long createRGBA(const Color& color) {
             return createRGBA1(color.r, color.g, color.b, color.a);
         }
+
+        bool _initialized;
+        Color _clear_color = {255, 255, 255, 255};
         
-	SDL_Window* _window;
-	SDL_Surface* _screenSurface;
-        SDL_Renderer* renderer;
-	bool _initialized;
-        RRG_Color _clear_color = { 255, 255, 255, 255 };
-};
+        Ogre::Root* mRoot;
+    };
+
+}
 
 #endif

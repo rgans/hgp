@@ -1,12 +1,12 @@
 #include "viewcontroller.h"
 
-RRG_ViewController::RRG_ViewController() {
-    //_view = new RRG_View();
+RRG::ViewController::ViewController() {
+    //_view = new RRG::View();
 }
 
-RRG_ViewController::~RRG_ViewController() {
+RRG::ViewController::~ViewController() {
 }
 
-void RRG_ViewController::Render() {
+void RRG::ViewController::Render() {
     _view.Render();
 }

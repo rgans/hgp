@@ -1,26 +1,21 @@
 #include "gamemanager.h"
 #include "logincontroller.h"
 
-RRG_GameManager::RRG_GameManager()
-{
+RRG::GameManager::GameManager() {
 }
 
-
-RRG_GameManager::~RRG_GameManager()
-{
+RRG::GameManager::~GameManager() {
 }
 
-bool RRG_GameManager::Initialize()
-{
-	if (!_initialized){
-		_initialized = true;
-	}
+bool RRG::GameManager::Initialize() {
+    if (!_initialized) {
+        _initialized = true;
+    }
 
-	return _initialized;
+    return _initialized;
 }
 
-void RRG_GameManager::Update()
-{
-    RRG_LoginController _currentController;
+void RRG::GameManager::Update() {
+    RRG::LoginController _currentController;
     _currentController.Render();
 }

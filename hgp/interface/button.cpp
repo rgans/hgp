@@ -1,8 +1,8 @@
 #include "button.h"
 
-RRG_Button::RRG_Button() {
+RRG::Button::Button() {
 }
 
-RRG_Button::~RRG_Button() {
+RRG::Button::~Button() {
 }
 

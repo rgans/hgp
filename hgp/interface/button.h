@@ -3,13 +3,16 @@
 
 #include "control.h"
 
-class RRG_Button : public RRG_Control {
-public:
-    RRG_Button();
-    virtual ~RRG_Button();
-private:
+namespace RRG {
 
-};
+    class Button : public Control {
+    public:
+        Button();
+        virtual ~Button();
+    private:
+
+    };
+
+}
 
 #endif
-

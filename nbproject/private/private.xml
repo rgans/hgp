@@ -7,18 +7,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/interface/control.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/viewcontroller.cpp</file>
             <file>file:/Users/rgans/Projetos/hgp/hgp/common/displaymanager.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/game.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/viewcontroller.h</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/common/framerate.h</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/interface/view.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/common/interval.h</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/gamemanager.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/common/interval.cpp</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/interface/control.h</file>
-            <file>file:/Users/rgans/Projetos/hgp/hgp/interface/button.h</file>
+            <file>file:/Users/rgans/Projetos/hgp/hgp/common/displaymanager.h</file>
         </group>
     </open-files>
 </project-private>

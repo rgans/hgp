@@ -4,34 +4,39 @@
 #include "common/util/observer.h"
 #include "logincontroller.h"
 
-struct RRG_GameObserver {
-	enum { CloseEvent, MouseMoveEvent, MouseClickEvent, KeyDownEvent, KeyUpEvent, KeyPressEvent };
-	using ObserverTable = std::tuple<
-		RRG_Observer<void(bool force_close)>
-	>;
-};
+namespace RRG {
 
-class RRG_GameManager : public RRG_Observable<RRG_GameObserver>
-{
-public:
-	static RRG_GameManager& Instance()
-	{
-		static RRG_GameManager _instance;
-		return _instance;
-	}
+    struct GameObserver {
 
-	RRG_GameManager(RRG_GameManager const&) = delete;
-	void operator=(RRG_GameManager const&) = delete;
+        enum {
+            CloseEvent, MouseMoveEvent, MouseClickEvent, KeyDownEvent, KeyUpEvent, KeyPressEvent
+        };
+        using ObserverTable = std::tuple<
+                Observer<void(bool force_close)>
+        >;
+    };
 
-	bool Initialize();
-	void Update();
+    class GameManager : public Observable<GameObserver> {
+    public:
 
-private:
-	RRG_GameManager();
-	~RRG_GameManager();
+        static GameManager& Instance() {
+            static GameManager _instance;
+            return _instance;
+        }
 
-	bool _initialized = false;
-};
+        GameManager(GameManager const&) = delete;
+        void operator=(GameManager const&) = delete;
+
+        bool Initialize();
+        void Update();
+
+    private:
+        GameManager();
+        ~GameManager();
+
+        bool _initialized = false;
+    };
+
+}
 
 #endif
-

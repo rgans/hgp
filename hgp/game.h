@@ -3,25 +3,28 @@
 
 #include "common/eventmanager.h"
 
-class RRG_Game
-{
-public:
-	RRG_Game();
-	~RRG_Game();
+namespace RRG {
 
-	bool Run(int argc, char* args[]);
+    class Game {
+    public:
+        Game();
+        ~Game();
 
-private:
-	bool Initialize();
-	bool Refresh();
-	bool Update();
-	bool Render();
-	void Cleanup();
+        bool Run(int argc, char* args[]);
 
-	void OnMouseMove(RRG_MouseMoveEventArg arg);
-	bool OnClose(bool force_close = false);
+    private:
+        bool Initialize();
+        bool Refresh();
+        bool Update();
+        bool Render();
+        void Cleanup();
 
-	bool _quit = false;
-};
+        void OnMouseMove(MouseMoveEventArg arg);
+        bool OnClose(bool force_close = false);
+
+        bool _quit = false;
+    };
+
+}
 
 #endif

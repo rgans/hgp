@@ -70,7 +70,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/Library/Frameworks -Llibs
+LDLIBSOPTIONS=-Llibs -L../OgreSDK/lib/macosx/Release
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -78,102 +78,102 @@ LDLIBSOPTIONS=-L/Library/Frameworks -Llibs
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hgp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hgp ${OBJECTFILES} ${LDLIBSOPTIONS} -framework SDL2 -framework SDL2_ttf
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hgp ${OBJECTFILES} ${LDLIBSOPTIONS} -framework OGRE
 
 ${OBJECTDIR}/hgp/common/Input.o: hgp/common/Input.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/Input.o hgp/common/Input.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/Input.o hgp/common/Input.cpp
 
 ${OBJECTDIR}/hgp/common/displaymanager.o: hgp/common/displaymanager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/displaymanager.o hgp/common/displaymanager.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/displaymanager.o hgp/common/displaymanager.cpp
 
 ${OBJECTDIR}/hgp/common/eventmanager.o: hgp/common/eventmanager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/eventmanager.o hgp/common/eventmanager.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/eventmanager.o hgp/common/eventmanager.cpp
 
 ${OBJECTDIR}/hgp/common/framerate.o: hgp/common/framerate.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/framerate.o hgp/common/framerate.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/framerate.o hgp/common/framerate.cpp
 
 ${OBJECTDIR}/hgp/common/inputdevice.o: hgp/common/inputdevice.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/inputdevice.o hgp/common/inputdevice.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/inputdevice.o hgp/common/inputdevice.cpp
 
 ${OBJECTDIR}/hgp/common/interval.o: hgp/common/interval.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/interval.o hgp/common/interval.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/interval.o hgp/common/interval.cpp
 
 ${OBJECTDIR}/hgp/common/keyboard/linuxinput.o: hgp/common/keyboard/linuxinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/keyboard
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/linuxinput.o hgp/common/keyboard/linuxinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/linuxinput.o hgp/common/keyboard/linuxinput.cpp
 
 ${OBJECTDIR}/hgp/common/keyboard/macinput.o: hgp/common/keyboard/macinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/keyboard
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/macinput.o hgp/common/keyboard/macinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/macinput.o hgp/common/keyboard/macinput.cpp
 
 ${OBJECTDIR}/hgp/common/keyboard/windowsinput.o: hgp/common/keyboard/windowsinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/keyboard
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/windowsinput.o hgp/common/keyboard/windowsinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/keyboard/windowsinput.o hgp/common/keyboard/windowsinput.cpp
 
 ${OBJECTDIR}/hgp/common/mouse/linuxinput.o: hgp/common/mouse/linuxinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/mouse
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/linuxinput.o hgp/common/mouse/linuxinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/linuxinput.o hgp/common/mouse/linuxinput.cpp
 
 ${OBJECTDIR}/hgp/common/mouse/macinput.o: hgp/common/mouse/macinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/mouse
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/macinput.o hgp/common/mouse/macinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/macinput.o hgp/common/mouse/macinput.cpp
 
 ${OBJECTDIR}/hgp/common/mouse/windowsinput.o: hgp/common/mouse/windowsinput.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/common/mouse
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/windowsinput.o hgp/common/mouse/windowsinput.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/common/mouse/windowsinput.o hgp/common/mouse/windowsinput.cpp
 
 ${OBJECTDIR}/hgp/game.o: hgp/game.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/game.o hgp/game.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/game.o hgp/game.cpp
 
 ${OBJECTDIR}/hgp/gamemanager.o: hgp/gamemanager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/gamemanager.o hgp/gamemanager.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/gamemanager.o hgp/gamemanager.cpp
 
 ${OBJECTDIR}/hgp/interface/button.o: hgp/interface/button.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/button.o hgp/interface/button.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/button.o hgp/interface/button.cpp
 
 ${OBJECTDIR}/hgp/interface/control.o: hgp/interface/control.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/control.o hgp/interface/control.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/control.o hgp/interface/control.cpp
 
 ${OBJECTDIR}/hgp/interface/view.o: hgp/interface/view.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp/interface
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/view.o hgp/interface/view.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/interface/view.o hgp/interface/view.cpp
 
 ${OBJECTDIR}/hgp/logincontroller.o: hgp/logincontroller.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/logincontroller.o hgp/logincontroller.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/logincontroller.o hgp/logincontroller.cpp
 
 ${OBJECTDIR}/hgp/viewcontroller.o: hgp/viewcontroller.cpp 
 	${MKDIR} -p ${OBJECTDIR}/hgp
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/viewcontroller.o hgp/viewcontroller.cpp
+	$(COMPILE.cc) -g -Iinclude -I../OgreSDK/boost/boost -I../OgreSDK/include/OGRE -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/hgp/viewcontroller.o hgp/viewcontroller.cpp
 
 # Subprojects
 .build-subprojects:

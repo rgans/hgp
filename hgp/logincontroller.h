@@ -4,15 +4,19 @@
 #include "viewcontroller.h"
 #include "interface/button.h"
 
-class RRG_LoginController : public RRG_ViewController {
-public:
-    RRG_LoginController();
-    virtual ~RRG_LoginController();
-private:
-    RRG_Button login_button;
-    void LoginButton_MouseOver();
-    void LoginButton_MouseOut();
+namespace RRG {
 
-};
+    class LoginController : public ViewController {
+    public:
+        LoginController();
+        virtual ~LoginController();
+    private:
+        Button login_button;
+        void LoginButton_MouseOver();
+        void LoginButton_MouseOut();
+
+    };
+
+}
 
 #endif

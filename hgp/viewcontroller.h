@@ -3,20 +3,25 @@
 
 #include "interface/view.h"
 
-class RRG_ViewController {
-public:
-    RRG_ViewController();
-    virtual ~RRG_ViewController();
-    virtual void Render();
+namespace RRG {
 
-protected:
+    class ViewController {
+    public:
+        ViewController();
+        virtual ~ViewController();
+        virtual void Render();
 
-    RRG_View* GetView() { return &_view; };
+    protected:
 
-private:
-    RRG_View _view;
+        View* GetView() {
+            return &_view;
+        };
 
-};
+    private:
+        View _view;
+
+    };
+
+}
 
 #endif
-

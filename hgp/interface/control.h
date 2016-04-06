@@ -4,35 +4,41 @@
 #include "view.h"
 #include "../common/eventmanager.h"
 
-struct RRG_ControlObserver {
+namespace RRG {
 
-    enum { MouseOverEvent, MouseOutEvent, MouseClickEvent };
-    using ObserverTable = std::tuple<
-            RRG_Observer<void()>, //MouseOverEvent
-            RRG_Observer<void()> //MouseOutEvent
-    >;
-};
+    struct ControlObserver {
 
-class RRG_Control : public RRG_View, public RRG_Observable<RRG_ControlObserver> {
-public:
-    RRG_Control();
-    ~RRG_Control();
-
-    inline bool IsEnabled() {
-        return _enabled;
+        enum {
+            MouseOverEvent, MouseOutEvent, MouseClickEvent
+        };
+        using ObserverTable = std::tuple<
+                Observer<void()>, //MouseOverEvent
+        Observer<void()> //MouseOutEvent
+        >;
     };
 
-    inline void SetEnabled(bool enabled) {
-        _enabled = enabled;
+    class Control : public View, public Observable<ControlObserver> {
+    public:
+        Control();
+        ~Control();
+
+        inline bool IsEnabled() {
+            return _enabled;
+        };
+
+        inline void SetEnabled(bool enabled) {
+            _enabled = enabled;
+        };
+
+    private:
+        bool _enabled = true;
+        bool _mouseover = false;
+
+        void OnMouseMove(MouseMoveEventArg arg);
+
+    protected:
     };
 
-private:
-    bool _enabled = true;
-    bool _mouseover = false;
-
-    void OnMouseMove(RRG_MouseMoveEventArg arg);
-
-protected:
-};
+}
 
 #endif

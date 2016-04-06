@@ -102,16 +102,16 @@
           <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
-            <pElem>/Library/Frameworks/SDL2.framework/Headers</pElem>
-            <pElem>/Library/Frameworks/SDL2_ttf.framework/Headers</pElem>
+            <pElem>../OgreSDK/boost/boost</pElem>
+            <pElem>../OgreSDK/include/OGRE</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/Library/Frameworks</pElem>
             <pElem>libs</pElem>
+            <pElem>../OgreSDK/lib/macosx/Release</pElem>
           </linkerAddLib>
-          <commandLine>-framework SDL2 -framework SDL2_ttf</commandLine>
+          <commandLine>-framework OGRE</commandLine>
         </linkerTool>
       </compileType>
       <item path="hgp/common/Input.cpp" ex="false" tool="1" flavor2="0">

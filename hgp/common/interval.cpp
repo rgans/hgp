@@ -1,8 +1,8 @@
 #include "interval.h"
 
-RRG_Interval::RRG_Interval() : initial_(GetTickCount()) {
+RRG::Interval::Interval() : initial_(GetTickCount()) {
 }
 
-RRG_Interval::~RRG_Interval() {
+RRG::Interval::~Interval() {
 }
 

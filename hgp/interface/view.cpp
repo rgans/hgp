@@ -1,47 +1,42 @@
 #include "view.h"
 
-
-RRG_View::RRG_View()
-{
+RRG::View::View() {
 }
 
-
-RRG_View::~RRG_View()
-{
+RRG::View::~View() {
 }
 
-void RRG_View::Render() {
+void RRG::View::Render() {
     Resize();
     Draw();
-    
-    for(int i = 0; i < _child.size(); i++){
-        RRG_View* child = _child.at(i);
+
+    for (int i = 0; i < _child.size(); i++) {
+        RRG::View* child = _child.at(i);
         child->Render();
     }
 }
 
-void RRG_View::Show() {
+void RRG::View::Show() {
     _visible = true;
 }
 
-void RRG_View::Hide() {
+void RRG::View::Hide() {
     _visible = false;
 }
 
-void RRG_View::Resize() {
+void RRG::View::Resize() {
 }
 
-void RRG_View::Draw() {
+void RRG::View::Draw() {
     _displayManager.Draw(_frame, _background_color);
 }
 
-bool RRG_View::IsInside(const RRG_Point* point)
-{
-    if(!point)
+bool RRG::View::IsInside(const RRG::Point* point) {
+    if (!point)
         return false;
-    
-    return point->x >= _frame.position.x && 
-            point->x <= _frame.size.width && 
-            point->y >= _frame.position.y && 
+
+    return point->x >= _frame.position.x &&
+            point->x <= _frame.size.width &&
+            point->y >= _frame.position.y &&
             point->y <= _frame.size.height;
 }
