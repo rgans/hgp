@@ -29,13 +29,13 @@
 		767AFD911CB58D6E007B1F01 /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767AFD7B1CB58D6E007B1F01 /* view.cpp */; };
 		767AFD921CB58D6E007B1F01 /* logincontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767AFD7D1CB58D6E007B1F01 /* logincontroller.cpp */; };
 		767AFD931CB58D6E007B1F01 /* viewcontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767AFD7F1CB58D6E007B1F01 /* viewcontroller.cpp */; };
-		767AFD961CB594CC007B1F01 /* libboost_signals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFD941CB594CC007B1F01 /* libboost_signals.a */; };
-		767AFD971CB594CC007B1F01 /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFD951CB594CC007B1F01 /* libboost_thread.a */; };
-		767AFD991CB594F0007B1F01 /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFD981CB594F0007B1F01 /* libboost_system.a */; };
-		767AFD9A1CB594FE007B1F01 /* libboost_system.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD981CB594F0007B1F01 /* libboost_system.a */; };
-		767AFD9B1CB594FE007B1F01 /* libboost_signals.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD941CB594CC007B1F01 /* libboost_signals.a */; };
-		767AFD9C1CB594FE007B1F01 /* libboost_thread.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD951CB594CC007B1F01 /* libboost_thread.a */; };
 		767AFD9D1CB594FE007B1F01 /* Ogre.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD371CB5774F007B1F01 /* Ogre.framework */; };
+		767AFDA11CB67152007B1F01 /* libboost_signals.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFD9E1CB67152007B1F01 /* libboost_signals.dylib */; };
+		767AFDA21CB67152007B1F01 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFD9F1CB67152007B1F01 /* libboost_system.dylib */; };
+		767AFDA31CB67152007B1F01 /* libboost_thread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AFDA01CB67152007B1F01 /* libboost_thread.dylib */; };
+		767AFDA41CB6715D007B1F01 /* libboost_signals.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD9E1CB67152007B1F01 /* libboost_signals.dylib */; };
+		767AFDA51CB6715D007B1F01 /* libboost_system.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFD9F1CB67152007B1F01 /* libboost_system.dylib */; };
+		767AFDA61CB6715D007B1F01 /* libboost_thread.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767AFDA01CB67152007B1F01 /* libboost_thread.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,9 +45,9 @@
 			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
-				767AFD9A1CB594FE007B1F01 /* libboost_system.a in CopyFiles */,
-				767AFD9B1CB594FE007B1F01 /* libboost_signals.a in CopyFiles */,
-				767AFD9C1CB594FE007B1F01 /* libboost_thread.a in CopyFiles */,
+				767AFDA41CB6715D007B1F01 /* libboost_signals.dylib in CopyFiles */,
+				767AFDA51CB6715D007B1F01 /* libboost_system.dylib in CopyFiles */,
+				767AFDA61CB6715D007B1F01 /* libboost_thread.dylib in CopyFiles */,
 				767AFD9D1CB594FE007B1F01 /* Ogre.framework in CopyFiles */,
 				765CF2FC1CABFB8300FA97DF /* Cocoa.framework in CopyFiles */,
 			);
@@ -99,9 +99,9 @@
 		767AFD7E1CB58D6E007B1F01 /* logincontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logincontroller.h; sourceTree = "<group>"; };
 		767AFD7F1CB58D6E007B1F01 /* viewcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = viewcontroller.cpp; sourceTree = "<group>"; };
 		767AFD801CB58D6E007B1F01 /* viewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewcontroller.h; sourceTree = "<group>"; };
-		767AFD941CB594CC007B1F01 /* libboost_signals.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_signals.a; path = libs/libboost_signals.a; sourceTree = "<group>"; };
-		767AFD951CB594CC007B1F01 /* libboost_thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_thread.a; path = libs/libboost_thread.a; sourceTree = "<group>"; };
-		767AFD981CB594F0007B1F01 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = libs/libboost_system.a; sourceTree = "<group>"; };
+		767AFD9E1CB67152007B1F01 /* libboost_signals.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_signals.dylib; path = libs/libboost_signals.dylib; sourceTree = "<group>"; };
+		767AFD9F1CB67152007B1F01 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = libs/libboost_system.dylib; sourceTree = "<group>"; };
+		767AFDA01CB67152007B1F01 /* libboost_thread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_thread.dylib; path = libs/libboost_thread.dylib; sourceTree = "<group>"; };
 		76BFAEF11CABE46500117DDE /* hgp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hgp; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,9 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				767AFD991CB594F0007B1F01 /* libboost_system.a in Frameworks */,
-				767AFD961CB594CC007B1F01 /* libboost_signals.a in Frameworks */,
-				767AFD971CB594CC007B1F01 /* libboost_thread.a in Frameworks */,
+				767AFDA11CB67152007B1F01 /* libboost_signals.dylib in Frameworks */,
+				767AFDA21CB67152007B1F01 /* libboost_system.dylib in Frameworks */,
+				767AFDA31CB67152007B1F01 /* libboost_thread.dylib in Frameworks */,
 				767AFD381CB5774F007B1F01 /* Ogre.framework in Frameworks */,
 				765CF2FB1CABFB7E00FA97DF /* Cocoa.framework in Frameworks */,
 			);
@@ -194,9 +194,9 @@
 		76BFAEE81CABE46500117DDE = {
 			isa = PBXGroup;
 			children = (
-				767AFD981CB594F0007B1F01 /* libboost_system.a */,
-				767AFD941CB594CC007B1F01 /* libboost_signals.a */,
-				767AFD951CB594CC007B1F01 /* libboost_thread.a */,
+				767AFD9E1CB67152007B1F01 /* libboost_signals.dylib */,
+				767AFD9F1CB67152007B1F01 /* libboost_system.dylib */,
+				767AFDA01CB67152007B1F01 /* libboost_thread.dylib */,
 				767AFD371CB5774F007B1F01 /* Ogre.framework */,
 				765CF2FA1CABFB7E00FA97DF /* Cocoa.framework */,
 				76BFAEF31CABE46500117DDE /* src */,
@@ -408,6 +408,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/include",
 				);
+				LD_RUNPATH_SEARCH_PATHS = /Users/rgans/Projetos/hgp/libs;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +426,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/include",
 				);
+				LD_RUNPATH_SEARCH_PATHS = /Users/rgans/Projetos/hgp/libs;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
