@@ -9,6 +9,7 @@ RRG::EventManager::~EventManager() {
 
 bool RRG::EventManager::Initialize() {
     if (!_initialized) {
+        _initialized = true;
     }
 
     return _initialized;

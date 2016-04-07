@@ -1,7 +1,11 @@
 #ifndef RRG_GAME_H
 #define RRG_GAME_H
 
+#include "gamemanager.h"
+#include "common/displaymanager.h"
 #include "common/eventmanager.h"
+#include "common/framerate.h"
+#include <iostream>
 
 namespace RRG {
 
@@ -10,7 +14,7 @@ namespace RRG {
         Game();
         ~Game();
 
-        bool Run(int argc, char* args[]);
+        int Run(int argc, char* args[]);
 
     private:
         bool Initialize();
@@ -23,6 +27,10 @@ namespace RRG {
         bool OnClose(bool force_close = false);
 
         bool _quit = false;
+        
+        RRG::EventManager& _eventManager = RRG::EventManager::Instance();
+        RRG::DisplayManager& _displayManager = RRG::DisplayManager::Instance();
+        RRG::GameManager& _gameManager = RRG::GameManager::Instance();
     };
 
 }

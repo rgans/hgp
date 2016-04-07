@@ -80,10 +80,14 @@ namespace RRG {
             return createRGBA1(color.r, color.g, color.b, color.a);
         }
 
-        bool _initialized;
+        bool _initialized = false;
         Color _clear_color = {255, 255, 255, 255};
         
-        Ogre::Root* mRoot;
+        Ogre::Root* _ogre_root;
+        Ogre::RenderWindow* _main_window;
+        Ogre::SceneManager* _ogre_scene;
+        Ogre::Camera* _ogre_camera;
+        Ogre::Viewport* _ogre_view_port;
     };
 
 }
